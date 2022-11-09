@@ -1,0 +1,263 @@
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@200&family=Roboto&display=swap');
+
+/* GLOBAL STYLE */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #22272e;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+button, input {
+    border: 0;
+    outline: none;
+    background-color: initial;
+}
+
+/* NAVIGATION SECTION */
+nav {
+    background-color: #2d333b;
+    color: #fff;
+}
+
+nav .nav-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+nav .nav-section h1 {
+    display: flex;
+    align-items: center;
+    
+}
+
+nav .nav-section #github-icon {
+    margin-right: 10px;
+}
+
+nav .nav-section ul .link {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 10px;
+}
+
+/* HEADER SECTION */
+header {
+    color: #fff; 
+    margin: 150px 0; 
+}
+header .header { 
+    display: flex;
+    width: 100%;
+} 
+
+header .header .header-section {
+    width: 100%;
+    padding: 0 50px 0 0;
+}
+
+header .header .header-section h1 {
+    font-size: 4.7em;
+    font-family: Roboto;
+}
+
+header .header .header-section p {
+    margin: 30px 0;
+    font-size: 1.3em;
+    line-height: 1.4;
+    color: #999;
+    font-family: Montserrat
+}
+
+header .header .header-section #button {
+    padding: 20px 5px 20px 50px;
+    background-color: #2d333b;
+    text-transform: uppercase;
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Montserrat;
+    border: 1px solid #2d333b;
+    transition: .2s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: initial;
+}
+
+header .header .header-section #button:hover {
+    opacity: 0.5;
+}
+
+header .header .header-section #angle-right-icon {
+    font-size: 1.5em;
+    margin-left: 40px;
+    position: relative;
+    animation: animateArrowRight 1s linear infinite
+}
+
+header .header img {
+    width: 100%;
+}
+
+@keyframes animateArrowRight {
+    0% { right: 20px; }
+    70% { right: 30px; }
+    100% { right: 20px; }
+}
+
+/* ABOUT PAGE SECTION */
+.about-section {color: #fff; margin: 50px 0}
+.about-section h1 {
+    font-size: 3em;
+    font-family: Roboto;
+}
+
+.about-section p {
+    font-family: Montserrat;
+    color: #888;
+    font-size: 1.2em;
+    line-height: 1.4;
+    width: 80%;
+    margin: 20px 0;
+}
+
+/* USER SEARCH SECTION */
+.user-search-section {
+    color: #fff;
+    padding: 50px 0;
+}
+
+.user-search-section #to-home-btn {
+    position: absolute;
+    font-size: 2.5em;
+    color: #ccc;
+    top: 20px;
+    left: 20px;
+    animation: animateArrowLeft 1s linear infinite
+}
+
+.user-search-section h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Montserrat;
+    font-size: 3.5em;
+    text-shadow: 4px 3px 0 #7A7A7A;
+}
+
+.user-search-section span {
+    font-size: .4em;
+    text-transform: uppercase;
+    font-family: Raleway;
+    position: relative;
+    top: 5px;
+    margin: 0 10px;
+    color: #ddd;
+}
+
+.user-search-section input {
+    background-color: #353d47;
+    color: #fff;
+    display: block;
+    margin: 20px auto;
+    width: 50%;
+    padding: 15px;
+    border-radius: 5px;
+    font-family: Montserrat;
+    box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.75);
+}
+
+.user-search-section form {
+    position: relative;
+}
+
+.user-search-section form button {
+    position: absolute;
+    top: 3.5px;
+    right: 24%;
+    color: #fff;
+    border: 3px solid #22272e;
+    color: #000;
+    font-weight: bold;
+    font-family: Montserrat;
+    padding: 8px 20px;
+    border-radius: 5px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.user-search-section form button:hover {
+    border-color: #4009d9;
+    color: #fff;
+}
+
+@keyframes animateArrowLeft {
+    0% { left: 20px; }
+    70% { left: 30px; }
+    100% { left: 20px; }
+}
+
+/* USER SECTION */
+.user-search-section .users-section {
+    background: #2d333b;
+    border-radius: 5px;
+    margin: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.user-search-section .users-section .card {
+    background: #22272e;
+    margin: 20px;
+    border-radius: 5px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.user-search-section .users-section .card:hover {
+    opacity: .7;
+    box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.75);
+}
+
+.user-search-section .users-section .card .card-image img {
+    width: 200px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.user-search-section .users-section .card .card-profile img {
+    width: 70px;
+    position: relative;
+    top: -45px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    border: 5px solid #22272e;
+}
+
+.user-search-section .users-section .card .card-profile p {
+    display: block;
+    text-align: center;
+    position: relative;
+    top: -25px;
+    font-size: 1.25em;
+    font-family: Montserrat;
+}
