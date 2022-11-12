@@ -7,10 +7,6 @@ function Navbar() {
         <div className="container">
             <div className="nav-section">
                 <h1><FaGithub id='github-icon' /> Github Explore</h1>
-                <ul>
-                    <Link to="/" className='link'>Home</Link>
-                    <Link to="/about" className='link'>About</Link>
-                </ul>
             </div>
         </div>
     </nav>

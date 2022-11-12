@@ -1,6 +1,7 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import GithubContext from '../context/GithubContext'
-import Spinner from './Spinner';
+import Spinner from '../shared/Spinner';
 
 function Users() {
     const { users, loading } = useContext(GithubContext);
@@ -9,7 +10,7 @@ function Users() {
         return (
             <>
                 {users.map(user => (
-                    <div className="card" key={user.id}>
+                    <Link to={`/users/${user.login}`} className="card" key={user.id}>
                         <div className="card-image">
                             <img src="https://matob.web.id/random/wp-content/uploads/sites/2/2021/12/GitHub.jpg" alt="" />
                         </div>
@@ -17,7 +18,7 @@ function Users() {
                             <img src={user.avatar_url} alt="" />
                             <p>{user.login}</p>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </>
         )

@@ -1,10 +1,39 @@
 import { FaAngleDoubleRight } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/Navbar';
+import { motion } from 'framer-motion';
+
+const variant = {
+  hidden: {
+    opacity: 0,
+    x: 0,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: 0.5,
+      ease: 'easeInOut',
+      duration: 1,
+    }
+  },
+  exit: {
+    x: '-100vw',
+    transition: {
+      ease: 'easeInOut',
+      duration: 0.5
+    }
+  }
+}
 
 function Home() {
   return (
-    <>
+    <motion.div
+      variants={variant}
+      initial='hidden'
+      animate='visible'
+      exit="exit"
+    >
       <Navbar />
       <header>
         <div className="container">
@@ -22,7 +51,7 @@ function Home() {
           </div>
         </div>
       </header>
-    </>
+    </motion.div>
   )
 }
 

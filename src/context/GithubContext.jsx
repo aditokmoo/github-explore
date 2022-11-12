@@ -7,6 +7,7 @@ const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
 
 export const GithubProvider = ({ children }) => {
     const [ users, setUsers ] = useState([]);
+    const [ user, setUser ] = useState([]); 
     const [ loading, setLoading ] = useState(true);
 
     useEffect(() => {
@@ -41,10 +42,25 @@ export const GithubProvider = ({ children }) => {
         setLoading(false);
     }
 
+    const getUser = async (login) => {
+        const res = await fetch(`${GITHUB_API}/users/${login}`, {
+            headers: {
+                Authorization: `${GITHUB_TOKEN}`
+            }
+        });
+
+        const data = await res.json();
+
+        setUser(data);
+
+    }
+
     return <GithubContext.Provider value={{
         users,
         loading,
-        searchUsers
+        searchUsers,
+        user,
+        getUser
     }}>
         {children}
     </GithubContext.Provider>
