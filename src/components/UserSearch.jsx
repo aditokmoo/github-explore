@@ -29,7 +29,6 @@ const variant = {
 
 function UserSearch() {
   const [ text, setText ] = useState('');
-  const [ click, setClick ] = useState(true);
   const { searchUsers } = useContext(GithubContext);
   
   const handleSubmit = (e) => {
@@ -52,7 +51,7 @@ function UserSearch() {
       exit="exit"
     >
       <section className="user-search-section">
-        <Link to='/' id='to-home-btn' onClick={() => setClick(false)}><FaAngleDoubleLeft /></Link>
+        <Link to='/' id='to-home-btn'><FaAngleDoubleLeft /></Link>
         <div className="container">
           <h1>Github <span>explore</span> <FaGithub /></h1>
           <form onSubmit={handleSubmit}>

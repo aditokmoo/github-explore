@@ -82,7 +82,7 @@ function User() {
                   <ul>
                     <li>{company && <BiBuilding /> } {company}</li>
                     <li>{location ? <SlLocationPin /> : null } {location}</li>
-                    <li>{blog && <BsLink45Deg />} <Link to={blog} id="blog-link" >{blog}</Link></li>
+                    <li>{blog && <BsLink45Deg />} <a href={blog} target='_blank' id="blog-link" >{blog}</a></li>
                   </ul>
                 </div>
               </div>
