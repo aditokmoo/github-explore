@@ -101,14 +101,14 @@ function User() {
             <div className="section-two">
               <div className="user-nav">
                 <ul>
-                  <li onClick={() => toggleTab(1)}><span className={activeTab === 1 && 'active'}><BiBookOpen id='link-icon' /> Overview</span></li>
-                  <li onClick={() => toggleTab(2)}><span className={activeTab === 2 && 'active'}><RiGitRepositoryLine id='link-icon' /> Repositories</span></li>
-                  <li onClick={() => toggleTab(3)}><span className={activeTab === 3 && 'active'}><TbTable id='link-icon' /> Projects</span></li>
-                  <li onClick={() => toggleTab(4)}><span className={activeTab === 4 && 'active'}><AiOutlineStar id='link-icon' /> Stars</span></li>
+                  <li onClick={() => toggleTab(1)}><span className={activeTab === 1 ? 'active' : ''}><BiBookOpen id='link-icon' /> Overview</span></li>
+                  <li onClick={() => toggleTab(2)}><span className={activeTab === 2 ? 'active' : ''}><RiGitRepositoryLine id='link-icon' /> Repositories</span></li>
+                  <li onClick={() => toggleTab(3)}><span className={activeTab === 3 ? 'active' : ''}><TbTable id='link-icon' /> Projects</span></li>
+                  <li onClick={() => toggleTab(4)}><span className={activeTab === 4 ? 'active' : ''}><AiOutlineStar id='link-icon' /> Stars</span></li>
                 </ul>
               </div>
 
-              <div className="user-repositories">
+              <div className="user-tab">
                 <div className={activeTab === 1 ? 'tab active-tab' : 'tab'}>
                   <Overview />
                 </div>
