@@ -1,12 +1,20 @@
-import { useContext, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { AiOutlineTeam } from 'react-icons/ai';
-import { BiBuilding } from 'react-icons/bi';
+import { useContext, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { motion } from 'framer-motion'
+import GithubContext from '../context/GithubContext';
+// Components
+import Navbar from './Navbar';
+import Overview from './github-profile/Overview';
+import Repositories from './github-profile/Repositories';
+import Projects from './github-profile/Projects';
+import Stars from './github-profile/Stars';
+// React Icons
+import { AiOutlineTeam, AiOutlineStar } from 'react-icons/ai';
+import { BiBuilding, BiBookOpen } from 'react-icons/bi';
 import { SlLocationPin } from 'react-icons/sl';
 import { BsLink45Deg } from 'react-icons/bs'
-import GithubContext from '../context/GithubContext';
-import Navbar from './Navbar';
-import { motion } from 'framer-motion'
+import { TbTable } from 'react-icons/tb'
+import { RiGitRepositoryLine } from 'react-icons/ri'
 
 const variant = {
   hidden: {
@@ -30,8 +38,11 @@ const variant = {
 }
 
 function User() {
+  const [ activeTab, setActiveTab ] = useState(1);
   const { getUser, user } = useContext(GithubContext);
   const params = useParams();
+
+  const toggleTab = (index) => setActiveTab(index);
 
   const { 
     login,
@@ -82,12 +93,36 @@ function User() {
                   <ul>
                     <li>{company && <BiBuilding /> } {company}</li>
                     <li>{location ? <SlLocationPin /> : null } {location}</li>
-                    <li>{blog && <BsLink45Deg />} <a href={blog} target='_blank' id="blog-link" >{blog}</a></li>
+                    <li>{blog && <BsLink45Deg />} <a href={blog} target='_blank' rel="noreferrer" id="blog-link" >{blog}</a></li>
                   </ul>
                 </div>
               </div>
             </div>
-            <div className="section-two"></div>
+            <div className="section-two">
+              <div className="user-nav">
+                <ul>
+                  <li onClick={() => toggleTab(1)}><span className={activeTab === 1 && 'active'}><BiBookOpen id='link-icon' /> Overview</span></li>
+                  <li onClick={() => toggleTab(2)}><span className={activeTab === 2 && 'active'}><RiGitRepositoryLine id='link-icon' /> Repositories</span></li>
+                  <li onClick={() => toggleTab(3)}><span className={activeTab === 3 && 'active'}><TbTable id='link-icon' /> Projects</span></li>
+                  <li onClick={() => toggleTab(4)}><span className={activeTab === 4 && 'active'}><AiOutlineStar id='link-icon' /> Stars</span></li>
+                </ul>
+              </div>
+
+              <div className="user-repositories">
+                <div className={activeTab === 1 ? 'tab active-tab' : 'tab'}>
+                  <Overview />
+                </div>
+                <div className={activeTab === 2 ? 'tab active-tab' : 'tab'}>
+                  <Repositories />
+                </div>
+                <div className={activeTab === 3 ? 'tab active-tab' : 'tab'}>
+                  <Projects />
+                </div>
+                <div className={activeTab === 4 ? 'tab active-tab' : 'tab'}>
+                  <Stars />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

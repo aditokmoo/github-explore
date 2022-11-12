@@ -346,3 +346,64 @@ header .header img {
     text-decoration: underline;
     color: #539bf5;
 }
+
+
+
+
+
+
+
+
+
+
+/* USER GITHUB REPOSITORIES SECTION */
+.github-profile .section .section-two {
+    margin-top: -5px;
+    padding: 0 40px;
+}
+
+.github-profile .section .section-two .user-nav {
+    margin-bottom: 70px;
+}
+
+.github-profile .section .section-two .user-nav ul {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+}
+
+.github-profile .section .section-two .user-nav ul li {
+    padding: 5px 0;
+    margin: 0 20px;
+    border-radius: 8px;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.github-profile .section .section-two .user-nav ul li span {
+    text-decoration: none;
+    padding: 15px 10px;
+    color: #adbac7;
+}
+
+.github-profile .section .section-two .user-nav ul li #link-icon {
+    position: relative;
+    top: 2px;
+}
+
+.github-profile .section .section-two .user-nav ul li:hover {
+    background: rgba(255, 255, 255, .1);
+}
+
+.github-profile .section .section-two .active {
+    font-weight: 600;
+    border-bottom: 3px solid #ec775c;
+}
+
+.github-profile .section .section-two .tab {
+    display: none;
+}
+
+.github-profile .section .section-two .active-tab {
+    display: block;
+}

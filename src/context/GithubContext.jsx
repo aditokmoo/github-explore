@@ -52,7 +52,6 @@ export const GithubProvider = ({ children }) => {
         const data = await res.json();
 
         setUser(data);
-
     }
 
     return <GithubContext.Provider value={{
