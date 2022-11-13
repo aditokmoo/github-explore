@@ -9,7 +9,7 @@ import Repositories from './github-profile/Repositories';
 import Projects from './github-profile/Projects';
 import Stars from './github-profile/Stars';
 // React Icons
-import { AiOutlineTeam, AiOutlineStar } from 'react-icons/ai';
+import { AiOutlineTeam, AiOutlineTwitter, AiOutlineStar } from 'react-icons/ai';
 import { BiBuilding, BiBookOpen } from 'react-icons/bi';
 import { SlLocationPin } from 'react-icons/sl';
 import { BsLink45Deg } from 'react-icons/bs'
@@ -53,9 +53,9 @@ function User() {
     location,
     bio,
     public_repos,
-    public_gists,
     followers,
-    following
+    following,
+    twitter_username
   } = user
 
   useEffect(() => {
@@ -94,6 +94,7 @@ function User() {
                     <li>{company && <BiBuilding /> } {company}</li>
                     <li>{location ? <SlLocationPin /> : null } {location}</li>
                     <li>{blog && <BsLink45Deg />} <a href={blog} target='_blank' rel="noreferrer" id="blog-link" >{blog}</a></li>
+                    <li>{twitter_username && <AiOutlineTwitter />} {twitter_username}</li>
                   </ul>
                 </div>
               </div>
@@ -102,7 +103,7 @@ function User() {
               <div className="user-nav">
                 <ul>
                   <li onClick={() => toggleTab(1)}><span className={activeTab === 1 ? 'active' : ''}><BiBookOpen id='link-icon' /> Overview</span></li>
-                  <li onClick={() => toggleTab(2)}><span className={activeTab === 2 ? 'active' : ''}><RiGitRepositoryLine id='link-icon' /> Repositories</span></li>
+                  <li onClick={() => toggleTab(2)}><span className={activeTab === 2 ? 'active' : ''}><RiGitRepositoryLine id='link-icon' /> Repositories <span id="pub-repos">{public_repos}</span></span></li>
                   <li onClick={() => toggleTab(3)}><span className={activeTab === 3 ? 'active' : ''}><TbTable id='link-icon' /> Projects</span></li>
                   <li onClick={() => toggleTab(4)}><span className={activeTab === 4 ? 'active' : ''}><AiOutlineStar id='link-icon' /> Stars</span></li>
                 </ul>
