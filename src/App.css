@@ -55,8 +55,6 @@ nav {
 
 nav .nav-section {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 20px 0;
 }
 
@@ -148,6 +146,7 @@ header .header img {
     color: #ccc;
     top: 20px;
     left: 20px;
+    z-index: 9;
     animation: animateArrowLeft 1s linear infinite
 }
 
@@ -265,14 +264,6 @@ header .header img {
     font-family: Montserrat;
 }
 
-
-
-
-
-
-
-
-
 /* USER GITHUB PROFILE SECTION */
 .github-profile {
     margin: 80px 0;
@@ -353,15 +344,6 @@ header .header img {
     text-decoration: underline;
     color: #539bf5;
 }
-
-
-
-
-
-
-
-
-
 
 /* USER GITHUB REPOSITORIES SECTION */
 .github-profile .section .section-two {
@@ -490,9 +472,6 @@ header .header img {
     align-items: center;
 }
 
-
-
-
 /* GITHUB USER REPOS SECTION */
 .github-profile .section .section-two .user-repos {
     margin-top: -30px;
@@ -576,3 +555,81 @@ header .header img {
     background-color: #539bf5;
 }
 /* ===================================== */
+
+
+/* ===================================== */
+/* MEDIA QUERIES */
+@media (min-width: 1050px) and (max-width: 1250px) {
+    nav .nav-section {padding: 20px}
+    .github-profile {padding: 0 20px;}
+}
+
+@media (min-width: 850px) and (max-width: 1050px) {
+    nav .nav-section {padding: 20px}
+    .github-profile {padding: 0 20px}
+    .github-profile .section .section-two .user-overview .repo {width: 100%}
+    .github-profile .section .section-two .user-nav ul li {margin: 0 10px}
+}
+
+@media(max-width: 850px) {
+    .github-profile {padding: 0px 30px}
+
+    /* HOME PAGE SECTION */
+    nav .nav-section {justify-content: center}
+    header .header .header-section {
+        width: 100%;
+        font-size: 0.7em;
+        text-align: center;
+        padding: 0 30px;
+    }
+    header .header img {display: none}
+
+    /* USER SEARCH SECTION */
+    .user-search-section h1 {
+        font-size: 2.7em;
+        position: relative;
+        top: -35px;
+        left: 30px;
+    }
+    .user-search-section input {
+        width: 90%;
+    }
+    .user-search-section form button {
+        right: 45px;
+    }
+    .user-search-section .users-section {justify-content: center}
+
+    /* USER PROFILE SECTION */
+    .github-profile .section {
+        display: block;
+    }
+    .github-profile .section .section-one {
+        width: 100%;
+        padding: 20px;
+    }
+    .github-profile .section .section-one img {width: 150px}
+    .github-profile .section .section-two {
+        margin-top: 0;
+        padding: 0;
+        width: 100%;
+    }
+    .github-profile .section .section-two .user-nav ul li {
+        margin: 0 auto;
+    }
+    .github-profile .section .section-two .user-nav ul li span {
+        padding: 10px 0;
+    }
+    .github-profile .section .section-two .user-overview {display: block}
+    .github-profile .section .section-two .user-overview .repo {width: inherit}
+    .github-profile .section .section-two .user-repos .repo {
+        margin: 0;
+        padding: 20px 10px;
+    }
+    .github-profile .section .section-two .user-repos .repo h5 {left: -5px}
+}
+
+@media(max-width: 500px) {
+    .github-profile {padding: inherit}
+    .user-search-section form button {right: 28px}
+    .github-profile .section .section-one img {width: 90%;}
+}
